@@ -1,4 +1,8 @@
-# Vulcan (In Progress 👨🏻‍💻) ![](https://symbolikon.com/wp-content/uploads/edd/2019/09/GreekMyth-hephaestos-grey-400w-280x280.png)
+<p align="center">
+  <img src="https://symbolikon.com/wp-content/uploads/edd/2019/09/GreekMyth-hephaestos-grey-400w-280x280.png" />
+</p>
+
+# Vulcan (In Progress 👨🏻‍💻)
 ![](https://img.shields.io/badge/Platform-macOS-blue)
 
 > Hephaestus (**Vulcan**), is the god of design and creativity, he's famous for making beautiful and fabulous things. Aphrodite's girdle, Eros' bow and arrows of love, Achilles' impenetrable armor, and the sun-chariot of Helios are all the products of Hephaestus' forge.
