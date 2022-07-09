@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F45A00D287A224B0091CAD1 /* VulcanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F45A00C287A224B0091CAD1 /* VulcanApp.swift */; };
-		0F45A00F287A224B0091CAD1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F45A00E287A224B0091CAD1 /* ContentView.swift */; };
+		0F410352287A3CB8005D123E /* MediaLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 0F410351287A3CB8005D123E /* MediaLibrary */; };
+		0F410354287A3CB8005D123E /* Player in Frameworks */ = {isa = PBXBuildFile; productRef = 0F410353287A3CB8005D123E /* Player */; };
+		0F410356287A3CB8005D123E /* Timeline in Frameworks */ = {isa = PBXBuildFile; productRef = 0F410355287A3CB8005D123E /* Timeline */; };
+		0F45A00F287A224B0091CAD1 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F45A00E287A224B0091CAD1 /* AppView.swift */; };
 		0F45A011287A224D0091CAD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F45A010287A224D0091CAD1 /* Assets.xcassets */; };
 		0F45A014287A224D0091CAD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F45A013287A224D0091CAD1 /* Preview Assets.xcassets */; };
+		0FF2D79A287A344C009C2A87 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0FF2D799287A344C009C2A87 /* ComposableArchitecture */; };
+		0FF2D79E287A36AD009C2A87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2D79D287A36AD009C2A87 /* AppDelegate.swift */; };
+		0FF2D7A2287A3721009C2A87 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2D7A1287A3721009C2A87 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F45A009287A224B0091CAD1 /* Vulcan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vulcan.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F45A00C287A224B0091CAD1 /* VulcanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VulcanApp.swift; sourceTree = "<group>"; };
-		0F45A00E287A224B0091CAD1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0F45A00E287A224B0091CAD1 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		0F45A010287A224D0091CAD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F45A013287A224D0091CAD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0F45A015287A224D0091CAD1 /* Vulcan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vulcan.entitlements; sourceTree = "<group>"; };
+		0FF2D79D287A36AD009C2A87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0FF2D7A1287A3721009C2A87 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +33,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FF2D79A287A344C009C2A87 /* ComposableArchitecture in Frameworks */,
+				0F410354287A3CB8005D123E /* Player in Frameworks */,
+				0F410352287A3CB8005D123E /* MediaLibrary in Frameworks */,
+				0F410356287A3CB8005D123E /* Timeline in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +48,7 @@
 			children = (
 				0F45A00B287A224B0091CAD1 /* Vulcan */,
 				0F45A00A287A224B0091CAD1 /* Products */,
+				0FF2D7A4287A3B11009C2A87 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,10 +63,8 @@
 		0F45A00B287A224B0091CAD1 /* Vulcan */ = {
 			isa = PBXGroup;
 			children = (
-				0F45A00C287A224B0091CAD1 /* VulcanApp.swift */,
-				0F45A00E287A224B0091CAD1 /* ContentView.swift */,
-				0F45A010287A224D0091CAD1 /* Assets.xcassets */,
-				0F45A015287A224D0091CAD1 /* Vulcan.entitlements */,
+				0FF2D79F287A36DF009C2A87 /* App */,
+				0FF2D7A3287A374E009C2A87 /* Resources */,
 				0F45A012287A224D0091CAD1 /* Preview Content */,
 			);
 			path = Vulcan;
@@ -67,6 +76,32 @@
 				0F45A013287A224D0091CAD1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0FF2D79F287A36DF009C2A87 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0F45A00E287A224B0091CAD1 /* AppView.swift */,
+				0FF2D79D287A36AD009C2A87 /* AppDelegate.swift */,
+				0FF2D7A1287A3721009C2A87 /* main.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0FF2D7A3287A374E009C2A87 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0F45A015287A224D0091CAD1 /* Vulcan.entitlements */,
+				0F45A010287A224D0091CAD1 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0FF2D7A4287A3B11009C2A87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +120,12 @@
 			dependencies = (
 			);
 			name = Vulcan;
+			packageProductDependencies = (
+				0FF2D799287A344C009C2A87 /* ComposableArchitecture */,
+				0F410351287A3CB8005D123E /* MediaLibrary */,
+				0F410353287A3CB8005D123E /* Player */,
+				0F410355287A3CB8005D123E /* Timeline */,
+			);
 			productName = Vulcan;
 			productReference = 0F45A009287A224B0091CAD1 /* Vulcan.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +154,9 @@
 				Base,
 			);
 			mainGroup = 0F45A000287A224B0091CAD1;
+			packageReferences = (
+				0FF2D798287A344C009C2A87 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 0F45A00A287A224B0091CAD1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,8 +183,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F45A00F287A224B0091CAD1 /* ContentView.swift in Sources */,
-				0F45A00D287A224B0091CAD1 /* VulcanApp.swift in Sources */,
+				0FF2D79E287A36AD009C2A87 /* AppDelegate.swift in Sources */,
+				0F45A00F287A224B0091CAD1 /* AppView.swift in Sources */,
+				0FF2D7A2287A3721009C2A87 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +310,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Vulcan/Vulcan.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Vulcan/Resources/Vulcan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -273,6 +318,7 @@
 				DEVELOPMENT_TEAM = 2QYWPTR48F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -292,7 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Vulcan/Vulcan.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Vulcan/Resources/Vulcan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -300,6 +346,7 @@
 				DEVELOPMENT_TEAM = 2QYWPTR48F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -336,6 +383,37 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0FF2D798287A344C009C2A87 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0F410351287A3CB8005D123E /* MediaLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MediaLibrary;
+		};
+		0F410353287A3CB8005D123E /* Player */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Player;
+		};
+		0F410355287A3CB8005D123E /* Timeline */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Timeline;
+		};
+		0FF2D799287A344C009C2A87 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FF2D798287A344C009C2A87 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0F45A001287A224B0091CAD1 /* Project object */;
 }
