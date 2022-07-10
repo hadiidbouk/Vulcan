@@ -1,0 +1,15 @@
+name: PR Check
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 35
+    if: github.event.pull_request.draft == false
+    steps:
+       - name: Test
+       - run: xcodebuild clean test -workspace "Vulcan.xcworkspace" -scheme "Vulcan"  -showBuildTimingSummary
