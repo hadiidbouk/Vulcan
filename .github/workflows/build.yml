@@ -2,9 +2,12 @@ name: Build
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref }}
   cancel-in-progress: true
+
 jobs:
   build:
     runs-on: macos-12
