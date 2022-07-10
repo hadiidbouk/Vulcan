@@ -28,6 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "MediaLibraryTests"
+               BuildableName = "MediaLibraryTests"
+               BlueprintName = "MediaLibraryTests"
+               ReferencedContainer = "container:MediaLibrary">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "PlayerTests"
+               BuildableName = "PlayerTests"
+               BlueprintName = "PlayerTests"
+               ReferencedContainer = "container:Player">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "TimelineTests"
+               BuildableName = "TimelineTests"
+               BlueprintName = "TimelineTests"
+               ReferencedContainer = "container:Timeline">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
