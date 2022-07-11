@@ -13,7 +13,9 @@
 		0F45A00F287A224B0091CAD1 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F45A00E287A224B0091CAD1 /* AppView.swift */; };
 		0F45A011287A224D0091CAD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F45A010287A224D0091CAD1 /* Assets.xcassets */; };
 		0F45A014287A224D0091CAD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F45A013287A224D0091CAD1 /* Preview Assets.xcassets */; };
-		0FF2D79A287A344C009C2A87 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0FF2D799287A344C009C2A87 /* ComposableArchitecture */; };
+		0FB4D5D8287B74760089BE50 /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = 0FB4D5D7287B74760089BE50 /* Shared */; };
+		0FB4D5E0287B79680089BE50 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0FB4D5DF287B79680089BE50 /* ComposableArchitecture */; };
+		0FB4D5E2287C4DC10089BE50 /* AppCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4D5E1287C4DC10089BE50 /* AppCore.swift */; };
 		0FF2D79E287A36AD009C2A87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2D79D287A36AD009C2A87 /* AppDelegate.swift */; };
 		0FF2D7A2287A3721009C2A87 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2D7A1287A3721009C2A87 /* main.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,7 @@
 		0F45A010287A224D0091CAD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F45A013287A224D0091CAD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0F45A015287A224D0091CAD1 /* Vulcan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vulcan.entitlements; sourceTree = "<group>"; };
+		0FB4D5E1287C4DC10089BE50 /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
 		0FF2D79D287A36AD009C2A87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FF2D7A1287A3721009C2A87 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -33,7 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FF2D79A287A344C009C2A87 /* ComposableArchitecture in Frameworks */,
+				0FB4D5E0287B79680089BE50 /* ComposableArchitecture in Frameworks */,
+				0FB4D5D8287B74760089BE50 /* Shared in Frameworks */,
 				0F410354287A3CB8005D123E /* Player in Frameworks */,
 				0F410352287A3CB8005D123E /* MediaLibrary in Frameworks */,
 				0F410356287A3CB8005D123E /* Timeline in Frameworks */,
@@ -81,6 +85,7 @@
 		0FF2D79F287A36DF009C2A87 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				0FB4D5E1287C4DC10089BE50 /* AppCore.swift */,
 				0F45A00E287A224B0091CAD1 /* AppView.swift */,
 				0FF2D79D287A36AD009C2A87 /* AppDelegate.swift */,
 				0FF2D7A1287A3721009C2A87 /* main.swift */,
@@ -121,10 +126,11 @@
 			);
 			name = Vulcan;
 			packageProductDependencies = (
-				0FF2D799287A344C009C2A87 /* ComposableArchitecture */,
 				0F410351287A3CB8005D123E /* MediaLibrary */,
 				0F410353287A3CB8005D123E /* Player */,
 				0F410355287A3CB8005D123E /* Timeline */,
+				0FB4D5D7287B74760089BE50 /* Shared */,
+				0FB4D5DF287B79680089BE50 /* ComposableArchitecture */,
 			);
 			productName = Vulcan;
 			productReference = 0F45A009287A224B0091CAD1 /* Vulcan.app */;
@@ -183,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FB4D5E2287C4DC10089BE50 /* AppCore.swift in Sources */,
 				0FF2D79E287A36AD009C2A87 /* AppDelegate.swift in Sources */,
 				0F45A00F287A224B0091CAD1 /* AppView.swift in Sources */,
 				0FF2D7A2287A3721009C2A87 /* main.swift in Sources */,
@@ -410,7 +417,11 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Timeline;
 		};
-		0FF2D799287A344C009C2A87 /* ComposableArchitecture */ = {
+		0FB4D5D7287B74760089BE50 /* Shared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Shared;
+		};
+		0FB4D5DF287B79680089BE50 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0FF2D798287A344C009C2A87 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;

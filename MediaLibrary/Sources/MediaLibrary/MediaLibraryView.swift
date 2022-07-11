@@ -5,6 +5,5 @@ public struct MediaLibraryView: View {
 	public var body: some View {
 		Text("Media Library")
 			.frame(maxWidth: .infinity, maxHeight: .infinity)
-			.background(.green)
 	}
 }
