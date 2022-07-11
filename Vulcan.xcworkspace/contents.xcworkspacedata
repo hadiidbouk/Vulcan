@@ -5,6 +5,9 @@
       location = "group:Vulcan.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Shared">
+   </FileRef>
+   <FileRef
       location = "group:MediaLibrary">
    </FileRef>
    <FileRef

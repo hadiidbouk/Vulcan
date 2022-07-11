@@ -1,5 +1,4 @@
 // swift-tools-version: 5.6
-
 import PackageDescription
 
 let package = Package(
@@ -10,13 +9,26 @@ let package = Package(
             name: "Timeline",
             targets: ["Timeline"]),
     ],
-    dependencies: [],
+    dependencies: [
+		// local
+		.package(path: "../Shared"),
+		
+		// global
+		.package(url: "https://github.com/pointfreeco/swift-composable-architecture", .upToNextMajor(from: "0.9.0"))
+	],
     targets: [
-        .target(
-            name: "Timeline",
-            dependencies: []),
-        .testTarget(
-            name: "TimelineTests",
-            dependencies: ["Timeline"]),
-    ]
+		.target(
+			name: "Timeline",
+			dependencies: [
+				// local
+				.product(name: "Shared", package: "Shared"),
+				
+				// global
+				.product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+			]
+		),
+		.testTarget(
+			name: "TimelineTests",
+			dependencies: ["Timeline"]),
+	]
 )
