@@ -6,16 +6,10 @@
 //
 
 import ComposableArchitecture
-import Shared
-
-private enum Constants {
-	static let mainFrameThrottleTime: TimeInterval = 0.5
-}
 
 public struct TimelineState: Equatable {
 	var rows: IdentifiedArrayOf<TimelineRowState> = []
 	var defaultRowsCount = 5
-	var mainFrame: CGRect = .zero
 	
 	@BindableState var timelineRect: CGRect = .zero
 	
@@ -28,19 +22,11 @@ public struct TimelineState: Equatable {
 
 public enum TimelineAction: BindableAction {
 	case row(id: TimelineRowState.ID, action: TimelineRowAction)
-	case onAppear
-	case mainWindowFrameChanged(Result<CGRect, Never>)
 	case binding(BindingAction<TimelineState>)
 }
 
 public struct TimelineEnvironment {
-	let windowsFrameHelper: WindowsFrameHelper
-	
-	public init(
-		windowsFrameHelper: WindowsFrameHelper
-	) {
-		self.windowsFrameHelper = windowsFrameHelper
-	}
+    public init() {}
 }
 
 public let timelineReducer = Reducer.combine(
@@ -48,15 +34,6 @@ public let timelineReducer = Reducer.combine(
 		switch action {
 		case .row:
 			return .none
-		case .onAppear:
-			return environment.windowsFrameHelper.$mainFrame
-				.throttle(for: .seconds(Constants.mainFrameThrottleTime), scheduler: DispatchQueue.main, latest: true)
-				.catchToEffect()
-				.map(TimelineAction.mainWindowFrameChanged)
-				.eraseToEffect()
-		case let .mainWindowFrameChanged(.success(frame)):
-			state.mainFrame = frame
-			return . none
 		default:
 			return .none
 		}
@@ -66,10 +43,6 @@ public let timelineReducer = Reducer.combine(
 	timelineRowReducer.forEach(
 		state: \.rows,
 		action: /TimelineAction.row(id:action:),
-		environment: { env in
-				.init(
-					windowsFrameHelper: env.windowsFrameHelper
-				)
-		}
+        environment: { _ in .init() }
 	)
 )

@@ -15,29 +15,29 @@ public struct TimelineView: View {
 
 	public var body: some View {
 		WithViewStore(store) { viewStore in
-			ScrollView([.vertical, .horizontal]) {
-				LazyVStack(spacing: .zero) {
-					TimelineAxisView(width: viewStore.mainFrame.width)
-						.frame(width: viewStore.mainFrame.width, height: Layout.axisHeight)
-					ForEachStore(
-						store.scope(
-							state: \.rows,
-							action: TimelineAction.row(id:action:)
-						)
-					) { store in
-						TimelineRowView(
-							store: store,
-							minWidth: viewStore.mainFrame.width,
-							height: viewStore.timelineRect.height / CGFloat(viewStore.rows.count)
-						)
-					}
-					Spacer()
-				}
-			}
-			.rectReader(viewStore.binding(\.$timelineRect))
-			.onAppear {
-				viewStore.send(.onAppear)
-			}
+            VStack(spacing: .zero) {
+                TimelineAxisView()
+                    .frame(width: viewStore.timelineRect.width, height: Layout.axisHeight)
+                
+                ScrollView([.vertical, .horizontal]) {
+                    VStack(spacing: .zero) {
+                        ForEachStore(
+                            store.scope(
+                                state: \.rows,
+                                action: TimelineAction.row(id:action:)
+                            )
+                        ) { store in
+                            TimelineRowView(
+                                store: store,
+                                height: viewStore.timelineRect.height / CGFloat(viewStore.rows.count)
+                            )
+                            .frame(minWidth: viewStore.timelineRect.width, maxWidth: .infinity)
+                        }
+                        Spacer()
+                    }
+                }
+                .rectReader(viewStore.binding(\.$timelineRect))
+            }
 		}
 	}
 }

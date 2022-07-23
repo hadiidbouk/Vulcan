@@ -22,16 +22,58 @@
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "SharedTests"
-               BuildableName = "SharedTests"
-               BlueprintName = "SharedTests"
+               BlueprintIdentifier = "Timeline"
+               BuildableName = "Timeline"
+               BlueprintName = "Timeline"
+               ReferencedContainer = "container:Timeline">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "Shared"
+               BuildableName = "Shared"
+               BlueprintName = "Shared"
                ReferencedContainer = "container:Shared">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "MediaLibrary"
+               BuildableName = "MediaLibrary"
+               BlueprintName = "MediaLibrary"
+               ReferencedContainer = "container:MediaLibrary">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "Player"
+               BuildableName = "Player"
+               BlueprintName = "Player"
+               ReferencedContainer = "container:Player">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,46 +84,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "MediaLibraryTests"
-               BuildableName = "MediaLibraryTests"
-               BlueprintName = "MediaLibraryTests"
-               ReferencedContainer = "container:MediaLibrary">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "PlayerTests"
-               BuildableName = "PlayerTests"
-               BlueprintName = "PlayerTests"
-               ReferencedContainer = "container:Player">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "TimelineTests"
-               BuildableName = "TimelineTests"
-               BlueprintName = "TimelineTests"
-               ReferencedContainer = "container:Timeline">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "SharedTests"
-               BuildableName = "SharedTests"
-               BlueprintName = "SharedTests"
-               ReferencedContainer = "container:Shared">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
