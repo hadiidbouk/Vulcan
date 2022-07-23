@@ -14,7 +14,7 @@ import Timeline
 
 private enum Layout {
 	static let windowDefaultWidth: CGFloat = 1024
-	static let windowDefaultHeight: CGFloat = 768
+	static let windowDefaultHeight: CGFloat = 576
 }
 
 struct AppView: View {
@@ -39,7 +39,7 @@ struct AppView_Previews: PreviewProvider {
 			store: .init(
 				initialState: .init(),
 				reducer: appReducer,
-				environment: .init(timelineEnvironment: .init(windowsFrameHelper: .init()))
+				environment: .init(timelineEnvironment: .init())
 			)
 		)
 	}

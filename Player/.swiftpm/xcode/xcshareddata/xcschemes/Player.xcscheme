@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "MediaLibrary"
-               BuildableName = "MediaLibrary"
-               BlueprintName = "MediaLibrary"
+               BlueprintIdentifier = "Player"
+               BuildableName = "Player"
+               BlueprintName = "Player"
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "MediaLibraryTests"
-               BuildableName = "MediaLibraryTests"
-               BlueprintName = "MediaLibraryTests"
-               ReferencedContainer = "container:">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -60,9 +50,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "MediaLibrary"
-            BuildableName = "MediaLibrary"
-            BlueprintName = "MediaLibrary"
+            BlueprintIdentifier = "Player"
+            BuildableName = "Player"
+            BlueprintName = "Player"
             ReferencedContainer = "container:">
          </BuildableReference>
       </MacroExpansion>

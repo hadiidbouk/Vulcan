@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F410352287A3CB8005D123E /* MediaLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 0F410351287A3CB8005D123E /* MediaLibrary */; };
-		0F410354287A3CB8005D123E /* Player in Frameworks */ = {isa = PBXBuildFile; productRef = 0F410353287A3CB8005D123E /* Player */; };
-		0F410356287A3CB8005D123E /* Timeline in Frameworks */ = {isa = PBXBuildFile; productRef = 0F410355287A3CB8005D123E /* Timeline */; };
+		0F0FC9E22881B98D00E9A2C0 /* Timeline in Frameworks */ = {isa = PBXBuildFile; productRef = 0F0FC9E12881B98D00E9A2C0 /* Timeline */; };
 		0F45A00F287A224B0091CAD1 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F45A00E287A224B0091CAD1 /* AppView.swift */; };
 		0F45A011287A224D0091CAD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F45A010287A224D0091CAD1 /* Assets.xcassets */; };
 		0F45A014287A224D0091CAD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F45A013287A224D0091CAD1 /* Preview Assets.xcassets */; };
-		0FB4D5D8287B74760089BE50 /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = 0FB4D5D7287B74760089BE50 /* Shared */; };
-		0FB4D5E0287B79680089BE50 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0FB4D5DF287B79680089BE50 /* ComposableArchitecture */; };
+		0F6C743C2881B6B00059BC20 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0F6C743B2881B6B00059BC20 /* ComposableArchitecture */; };
+		0FA6865A28873DCC00DE3C7C /* MediaLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 0FA6865928873DCC00DE3C7C /* MediaLibrary */; };
+		0FA6865C28873DCC00DE3C7C /* Player in Frameworks */ = {isa = PBXBuildFile; productRef = 0FA6865B28873DCC00DE3C7C /* Player */; };
+		0FA6865E28873DCC00DE3C7C /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = 0FA6865D28873DCC00DE3C7C /* Shared */; };
 		0FB4D5E2287C4DC10089BE50 /* AppCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4D5E1287C4DC10089BE50 /* AppCore.swift */; };
 		0FF2D79E287A36AD009C2A87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2D79D287A36AD009C2A87 /* AppDelegate.swift */; };
 		0FF2D7A2287A3721009C2A87 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2D7A1287A3721009C2A87 /* main.swift */; };
@@ -36,11 +36,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FB4D5E0287B79680089BE50 /* ComposableArchitecture in Frameworks */,
-				0FB4D5D8287B74760089BE50 /* Shared in Frameworks */,
-				0F410354287A3CB8005D123E /* Player in Frameworks */,
-				0F410352287A3CB8005D123E /* MediaLibrary in Frameworks */,
-				0F410356287A3CB8005D123E /* Timeline in Frameworks */,
+				0FA6865E28873DCC00DE3C7C /* Shared in Frameworks */,
+				0FA6865A28873DCC00DE3C7C /* MediaLibrary in Frameworks */,
+				0F6C743C2881B6B00059BC20 /* ComposableArchitecture in Frameworks */,
+				0F0FC9E22881B98D00E9A2C0 /* Timeline in Frameworks */,
+				0FA6865C28873DCC00DE3C7C /* Player in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,11 +126,11 @@
 			);
 			name = Vulcan;
 			packageProductDependencies = (
-				0F410351287A3CB8005D123E /* MediaLibrary */,
-				0F410353287A3CB8005D123E /* Player */,
-				0F410355287A3CB8005D123E /* Timeline */,
-				0FB4D5D7287B74760089BE50 /* Shared */,
-				0FB4D5DF287B79680089BE50 /* ComposableArchitecture */,
+				0F6C743B2881B6B00059BC20 /* ComposableArchitecture */,
+				0F0FC9E12881B98D00E9A2C0 /* Timeline */,
+				0FA6865928873DCC00DE3C7C /* MediaLibrary */,
+				0FA6865B28873DCC00DE3C7C /* Player */,
+				0FA6865D28873DCC00DE3C7C /* Shared */,
 			);
 			productName = Vulcan;
 			productReference = 0F45A009287A224B0091CAD1 /* Vulcan.app */;
@@ -333,6 +333,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hadiidbouk.Vulcan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -362,6 +363,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hadiidbouk.Vulcan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -405,26 +407,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0F410351287A3CB8005D123E /* MediaLibrary */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MediaLibrary;
-		};
-		0F410353287A3CB8005D123E /* Player */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Player;
-		};
-		0F410355287A3CB8005D123E /* Timeline */ = {
+		0F0FC9E12881B98D00E9A2C0 /* Timeline */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Timeline;
 		};
-		0FB4D5D7287B74760089BE50 /* Shared */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Shared;
-		};
-		0FB4D5DF287B79680089BE50 /* ComposableArchitecture */ = {
+		0F6C743B2881B6B00059BC20 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0FF2D798287A344C009C2A87 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		0FA6865928873DCC00DE3C7C /* MediaLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MediaLibrary;
+		};
+		0FA6865B28873DCC00DE3C7C /* Player */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Player;
+		};
+		0FA6865D28873DCC00DE3C7C /* Shared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Shared;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
