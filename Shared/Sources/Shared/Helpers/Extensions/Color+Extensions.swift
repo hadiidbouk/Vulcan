@@ -14,5 +14,6 @@ public extension Color {
 		public static let background = Color("background", bundle: .module)
 		public static let primary = Color("primary", bundle: .module)
 		public static let secondary = Color("secondary", bundle: .module)
+		public static let white = Color("white", bundle: .module)
 	}
 }

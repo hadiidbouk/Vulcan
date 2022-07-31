@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "closure #1 in variable initialization expression of timelineToolsReducer:TimelineToolsCore.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "state.scaleAcceptedValues[Int(state.scaleStep)]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AxisShape.path(in:):TimelineAxisView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "rect.minY">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in variable initialization expression of timelineReducer:TimelineCore.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "closestValueIndex">
+            </PersistentString>
+            <PersistentString
+               value = "state.scaleAcceptedValued.endIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

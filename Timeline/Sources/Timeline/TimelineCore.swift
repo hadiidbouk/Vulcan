@@ -7,12 +7,14 @@
 
 import ComposableArchitecture
 
+
 public struct TimelineState: Equatable {
-	var rows: IdentifiedArrayOf<TimelineRowState> = []
+    @BindableState var timelineRect: CGRect = .zero
+    
+    var rows: IdentifiedArrayOf<TimelineRowState> = []
 	var defaultRowsCount = 5
-	
-	@BindableState var timelineRect: CGRect = .zero
-	
+	var timelineTools = TimelineToolsState()
+
 	public init() {
 		for index in 0..<defaultRowsCount {
 			rows.append(.init(id: index))
@@ -21,6 +23,7 @@ public struct TimelineState: Equatable {
 }
 
 public enum TimelineAction: BindableAction {
+	case timelineTools(TimelineToolsAction)
 	case row(id: TimelineRowState.ID, action: TimelineRowAction)
 	case binding(BindingAction<TimelineState>)
 }
@@ -44,5 +47,10 @@ public let timelineReducer = Reducer.combine(
 		state: \.rows,
 		action: /TimelineAction.row(id:action:),
         environment: { _ in .init() }
+	),
+	timelineToolsReducer.pullback(
+		state: \.timelineTools,
+		action: /TimelineAction.timelineTools,
+		environment: { _ in .init() }
 	)
 )
