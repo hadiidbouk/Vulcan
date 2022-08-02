@@ -7,7 +7,7 @@
 
 import ComposableArchitecture
 import Foundation
-	
+
 public extension Array {
 	func updatedElements(with action: (inout Element) -> Void) -> [Element] {
 		var newElements: [Element] = []

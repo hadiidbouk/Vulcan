@@ -8,6 +8,10 @@
 import ComposableArchitecture
 import SwiftUI
 
+private enum Layout {
+	static let sliderWidth: CGFloat = 150
+}
+
 struct TimelineToolsView: View {
 	let store: Store<TimelineToolsState, TimelineToolsAction>
 
@@ -19,10 +23,10 @@ struct TimelineToolsView: View {
 					in: viewStore.scaleRange,
 					step: viewStore.scaleStep
 				)
-					.frame(width: 150)
-				
+				.frame(width: Layout.sliderWidth)
+
 				Text("\(viewStore.unitTime)")
-				
+
 				Spacer()
 			}
 		}

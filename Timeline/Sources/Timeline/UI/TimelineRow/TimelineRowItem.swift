@@ -16,20 +16,20 @@ struct TimelineRowItem: Identifiable, Equatable {
 	private(set) var startTime: TimeInterval = .zero
 	private(set) var endTime: TimeInterval = .zero
 	private(set) var width: CGFloat = .zero
-	
+
 	init(position: CGPoint, fileMetadata: FileMetadata, axisUnitTime: TimeInterval) {
 		self.position = position
 		self.fileMetadata = fileMetadata
 		updateInfo(for: axisUnitTime)
 	}
-	
+
 	mutating func updateInfo(for axisUnitTime: TimeInterval) {
 		let info = extractInfo(for: axisUnitTime)
 		startTime = info.startTime
 		endTime = info.endTime
 		width = info.width
 	}
-	
+
 	private func extractInfo(for axisUnitTime: TimeInterval) -> (width: CGFloat, startTime: TimeInterval, endTime: TimeInterval) {
 		let width = (fileMetadata.duration * TimelineConstants.axisUnitWidth) / axisUnitTime
 		let startTime = (position.x * axisUnitTime) / TimelineConstants.axisUnitWidth

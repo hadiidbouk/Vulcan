@@ -2,33 +2,35 @@
 import PackageDescription
 
 let package = Package(
-    name: "Timeline",
+	name: "Timeline",
 	platforms: [.macOS(.v12)],
-    products: [
-        .library(
-            name: "Timeline",
-            targets: ["Timeline"]),
-    ],
-    dependencies: [
+	products: [
+		.library(
+			name: "Timeline",
+			targets: ["Timeline"]
+		),
+	],
+	dependencies: [
 		// local
 		.package(path: "../Shared"),
-		
+
 		// global
-		.package(url: "https://github.com/pointfreeco/swift-composable-architecture", .upToNextMajor(from: "0.9.0"))
+		.package(url: "https://github.com/pointfreeco/swift-composable-architecture", .upToNextMajor(from: "0.9.0")),
 	],
-    targets: [
+	targets: [
 		.target(
 			name: "Timeline",
 			dependencies: [
 				// local
 				.product(name: "Shared", package: "Shared"),
-				
+
 				// global
-				.product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+				.product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
 			]
 		),
 		.testTarget(
 			name: "TimelineTests",
-			dependencies: ["Timeline"]),
+			dependencies: ["Timeline"]
+		),
 	]
 )

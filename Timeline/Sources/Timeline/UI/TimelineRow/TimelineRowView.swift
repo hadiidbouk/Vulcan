@@ -21,7 +21,7 @@ struct TimelineRowView: View {
 						.frame(height: height)
 						.offset(x: position.x)
 				}
-				
+
 				ForEach(viewStore.items) { item in
 					Color.yellow
 						.offset(x: item.position.x)
@@ -29,8 +29,8 @@ struct TimelineRowView: View {
 				}
 				Spacer()
 			}
-            .frame(maxWidth: .infinity, minHeight: height)
-			.background(viewStore.id % 2 == 0 ? Color.Vulcan.background : Color.Vulcan.primary.opacity(0.4))
+			.frame(maxWidth: .infinity, minHeight: height)
+			.background(viewStore.id.isMultiple(of: 2) ? Color.Vulcan.background : Color.Vulcan.primary.opacity(0.4))
 			.onDrop(of: viewStore.fileypes, delegate: delegate)
 		}
 	}

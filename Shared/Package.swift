@@ -2,28 +2,30 @@
 import PackageDescription
 
 let package = Package(
-    name: "Shared",
+	name: "Shared",
 	platforms: [.macOS(.v12)],
-    products: [
-        .library(
-            name: "Shared",
-            targets: ["Shared"]),
-    ],
-    dependencies: [
-		// global
-		.package(url: "https://github.com/pointfreeco/swift-composable-architecture", .upToNextMajor(from: "0.9.0"))
+	products: [
+		.library(
+			name: "Shared",
+			targets: ["Shared"]
+		),
 	],
-    targets: [
+	dependencies: [
+		// global
+		.package(url: "https://github.com/pointfreeco/swift-composable-architecture", .upToNextMajor(from: "0.9.0")),
+	],
+	targets: [
 		.target(
-            name: "Shared",
-            dependencies: [
+			name: "Shared",
+			dependencies: [
 				// global
-				.product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+				.product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
 			],
 			resources: [.process("Resources")]
 		),
-        .testTarget(
-            name: "SharedTests",
-            dependencies: ["Shared"]),
-    ]
+		.testTarget(
+			name: "SharedTests",
+			dependencies: ["Shared"]
+		),
+	]
 )

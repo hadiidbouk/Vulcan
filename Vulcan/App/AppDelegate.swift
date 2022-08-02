@@ -29,8 +29,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 			backing: .buffered,
 			defer: false
 		)
-        window.identifier = Windows.main.id
-        window.setFrameAutosaveName(Windows.main.id.rawValue)
+		window.identifier = Windows.main.id
+		window.setFrameAutosaveName(Windows.main.id.rawValue)
 		window.titlebarAppearsTransparent = true
 		window.titlebarView?.setBackgroundColor(NSColor(Color.Vulcan.background))
 		window.center()

@@ -16,4 +16,7 @@
    <FileRef
       location = "group:Timeline">
    </FileRef>
+   <FileRef
+      location = "group:Tools">
+   </FileRef>
 </Workspace>

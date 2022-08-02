@@ -2,20 +2,23 @@
 import PackageDescription
 
 let package = Package(
-    name: "MediaLibrary",
+	name: "MediaLibrary",
 	platforms: [.macOS(.v12)],
-    products: [
-        .library(
-            name: "MediaLibrary",
-            targets: ["MediaLibrary"]),
-    ],
-    dependencies: [],
-    targets: [
-        .target(
-            name: "MediaLibrary",
-            dependencies: []),
-        .testTarget(
-            name: "MediaLibraryTests",
-            dependencies: ["MediaLibrary"]),
-    ]
+	products: [
+		.library(
+			name: "MediaLibrary",
+			targets: ["MediaLibrary"]
+		),
+	],
+	dependencies: [],
+	targets: [
+		.target(
+			name: "MediaLibrary",
+			dependencies: []
+		),
+		.testTarget(
+			name: "MediaLibraryTests",
+			dependencies: ["MediaLibrary"]
+		),
+	]
 )

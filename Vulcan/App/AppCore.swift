@@ -12,7 +12,7 @@ import Timeline
 
 struct AppState: Equatable {
 	var timeline = TimelineState()
-	
+
 	var mainFrame: CGRect = .zero
 }
 
@@ -25,13 +25,15 @@ struct AppEnvironment {
 }
 
 let appReducer = Reducer.combine(
-	Reducer<AppState, AppAction, AppEnvironment> { state, action, _ in
+	Reducer<AppState, AppAction, AppEnvironment> { _, action, _ in
 		switch action {
 		case .timeline:
 			return .none
 		}
 	},
-	timelineReducer.pullback(state: \.timeline,
-							 action: /AppAction.timeline,
-							 environment: \.timelineEnvironment)
+	timelineReducer.pullback(
+		state: \.timeline,
+		action: /AppAction.timeline,
+		environment: \.timelineEnvironment
+	)
 )

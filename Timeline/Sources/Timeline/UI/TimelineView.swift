@@ -8,13 +8,13 @@ private enum Layout {
 }
 
 public struct TimelineView: View {
-    private let store: Store<TimelineState, TimelineAction>
-    
-    public init(store: Store<TimelineState, TimelineAction>) {
-        self.store = store
-    }
-    
-    public var body: some View {
+	private let store: Store<TimelineState, TimelineAction>
+
+	public init(store: Store<TimelineState, TimelineAction>) {
+		self.store = store
+	}
+
+	public var body: some View {
 		WithViewStore(store) { viewStore in
 			VStack(alignment: .leading, spacing: .zero) {
 				TimelineToolsView(store: store.scope(state: \.timelineTools, action: TimelineAction.timelineTools))
