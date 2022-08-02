@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import Shared
 
 public struct TimelineToolsState: Equatable {
 	@BindableState var scaleValue: Double
@@ -20,6 +21,8 @@ public struct TimelineToolsState: Equatable {
 	]
 	
 	var unitTime: TimeInterval = .zero
+	var movieEndDuration: TimeInterval = .zero
+	var axisWidth: CGFloat = Windows.main.frame.width
 
 	let scaleRange: ClosedRange<Double>
 
@@ -32,6 +35,8 @@ public struct TimelineToolsState: Equatable {
 
 public enum TimelineToolsAction: BindableAction {
 	case binding(BindingAction<TimelineToolsState>)
+	case unitTimeChanged
+	case movieEndDurationChanged(TimeInterval)
 }
 
 struct TimelineToolsEnvironment {
@@ -41,6 +46,12 @@ let timelineToolsReducer = Reducer<TimelineToolsState, TimelineToolsAction, Time
 	switch action {
 	case .binding(\.$scaleValue):
 		state.unitTime = state.scaleAcceptedValues[Int(state.scaleValue)]
+		return Effect(value: TimelineToolsAction.unitTimeChanged)
+	case .unitTimeChanged:
+		return Effect(value: .movieEndDurationChanged(state.movieEndDuration))
+	case let .movieEndDurationChanged(duration):
+		state.axisWidth = max(Windows.main.frame.width, (duration * TimelineConstants.axisUnitWidth) / state.unitTime)
+		state.movieEndDuration = duration
 		return .none
 	default:
 		return .none

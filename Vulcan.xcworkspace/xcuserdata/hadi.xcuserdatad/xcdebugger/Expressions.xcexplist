@@ -22,10 +22,16 @@
          contextName = "closure #1 in variable initialization expression of timelineReducer:TimelineCore.swift">
          <PersistentStrings>
             <PersistentString
-               value = "closestValueIndex">
+               value = "state.scaleAcceptedValued.endIndex">
             </PersistentString>
             <PersistentString
-               value = "state.scaleAcceptedValued.endIndex">
+               value = "rowState.movieEndDuration">
+            </PersistentString>
+            <PersistentString
+               value = "max(state.movieEndDuration, rowState.movieEndDuration)">
+            </PersistentString>
+            <PersistentString
+               value = "closestValueIndex">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

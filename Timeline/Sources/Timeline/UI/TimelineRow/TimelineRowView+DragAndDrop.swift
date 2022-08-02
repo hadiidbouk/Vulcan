@@ -8,32 +8,42 @@
 import ComposableArchitecture
 import SwiftUI
 
+private enum Layout {
+	static let cornerRadius: CGFloat = 10
+	static let strokeBorderLineWidth: CGFloat = 1
+	static let strokeDash: [CGFloat] = [5]
+}
+
 extension TimelineRowView {
 	struct DragView: View {
 		var body: some View {
-			Color.red
+			GeometryReader { gometry in
+				RoundedRectangle(cornerRadius: Layout.cornerRadius)
+					.strokeBorder(style: .init(lineWidth: Layout.strokeBorderLineWidth, dash: Layout.strokeDash))
+					.foregroundColor(Color.Vulcan.white.opacity(0.5))
+					.frame(width: gometry.size.width / 2)
+			}
 		}
 	}
-
 	struct Delegate: DropDelegate {
 		let viewStore: ViewStore<TimelineRowState, TimelineRowAction>
 		
 		func dropExited(info: DropInfo) {
-			viewStore.send(.dropEntered(position: nil))
+			viewStore.send(.dragPositionChanged(position: nil))
 		}
 		
 		func dropEntered(info: DropInfo) {
-			viewStore.send(.dropEntered(position: info.location))
+			viewStore.send(.dragPositionChanged(position: info.location))
 		}
 		
 		func dropUpdated(info: DropInfo) -> DropProposal? {
-			viewStore.send(.dropEntered(position: info.location))
+			viewStore.send(.dragPositionChanged(position: info.location))
 			return nil
 		}
 		
 		func performDrop(info: DropInfo) -> Bool {
 			let items = info.itemProviders(for: viewStore.fileypes)
-			viewStore.send(.onDrop(items: items))
+			viewStore.send(.onDrop(items: items, position: info.location))
 			return true
 		}
 	}

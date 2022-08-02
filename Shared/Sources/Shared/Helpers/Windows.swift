@@ -12,17 +12,21 @@ public enum Windows {
 }
 
 public extension Windows {
-    var id: NSUserInterfaceItemIdentifier {
-        switch self {
-        case .main:
-            return .init("main_window")
-        }
-    }
-
+	var id: NSUserInterfaceItemIdentifier {
+		switch self {
+		case .main:
+			return .init("main_window")
+		}
+	}
+	
 	var nsWindow: NSWindow {
 		switch self {
 		case .main:
-            return NSApplication.shared.windows.first { $0.identifier == id }!
+			return NSApplication.shared.windows.first { $0.identifier == id }!
 		}
+	}
+	
+	var frame: CGRect {
+		NSRectToCGRect(nsWindow.frame)
 	}
 }
