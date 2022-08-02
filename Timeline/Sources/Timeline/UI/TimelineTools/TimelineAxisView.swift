@@ -10,34 +10,36 @@ import Shared
 import SwiftUI
 
 private enum Layout {
-	static let width: CGFloat = 100
 	static let height: CGFloat = 25
 	static let strokeLineWidth: CGFloat = 0.3
+	static let fontSize: CGFloat = 10
 }
 
 struct TimelineAxisView: View {
 	let store: Store<TimelineToolsState, TimelineToolsAction>
-
+	
 	var body: some View {
 		WithViewStore(store) { viewStore in
-			GeometryReader { geometry in
-				VStack {
-					let count = Int(geometry.size.width) / Int(Layout.width)
-					HStack(spacing: .zero) {
+			VStack(alignment: .leading) {
+				let count = Int(viewStore.axisWidth) / Int(TimelineConstants.axisUnitWidth)
+				HStack(spacing: .zero) {
+					LazyHStack(spacing: .zero) {
 						ForEach(0..<count, id: \.self) { index in
 							VStack(alignment: .leading, spacing: .zero) {
 								Text(Date.formattedDetailedTime(from: viewStore.unitTime * Double(index + 1)))
-									.font(.system(size: 10))
+									.font(.system(size: Layout.fontSize))
 									.fontWeight(.light)
 									.foregroundColor(Color.Vulcan.white)
 								AxisShape(isLastAxis: index == count - 1)
-									.stroke(Color.Vulcan.white, lineWidth: Layout.strokeLineWidth)
+									.stroke(Color.Vulcan.white , lineWidth: Layout.strokeLineWidth)
+									.frame(width: TimelineConstants.axisUnitWidth)
 							}
 						}
 					}
+					Spacer()
 				}
 			}
-			.frame(height: Layout.height)
+			.frame(width: viewStore.axisWidth, height: Layout.height)
 		}
 	}
 }

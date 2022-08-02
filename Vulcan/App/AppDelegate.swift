@@ -14,7 +14,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 		initialState: .init(),
 		reducer: appReducer,
 		environment: .init(
-			timelineEnvironment: .init()
+			timelineEnvironment: .init(
+				mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
+				fileManager: .default
+			)
 		)
 	)
 	private var window: NSWindow!

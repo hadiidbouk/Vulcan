@@ -17,9 +17,15 @@ struct TimelineRowView: View {
 			let delegate = Delegate(viewStore: viewStore)
 			HStack(spacing: .zero) {
 				if let position = viewStore.dragPosition {
-					Color.red
-						.frame(width: 200, height: height)
+					TimelineRowView.DragView()
+						.frame(height: height)
 						.offset(x: position.x)
+				}
+				
+				ForEach(viewStore.items) { item in
+					Color.yellow
+						.offset(x: item.position.x)
+						.frame(width: item.width, height: height)
 				}
 				Spacer()
 			}

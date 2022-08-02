@@ -39,7 +39,12 @@ struct AppView_Previews: PreviewProvider {
 			store: .init(
 				initialState: .init(),
 				reducer: appReducer,
-				environment: .init(timelineEnvironment: .init())
+				environment: .init(
+					timelineEnvironment: .init(
+						mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
+						fileManager: .default
+					)
+				)
 			)
 		)
 	}

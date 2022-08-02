@@ -9,11 +9,17 @@ let package = Package(
             name: "Shared",
             targets: ["Shared"]),
     ],
-    dependencies: [],
+    dependencies: [
+		// global
+		.package(url: "https://github.com/pointfreeco/swift-composable-architecture", .upToNextMajor(from: "0.9.0"))
+	],
     targets: [
 		.target(
             name: "Shared",
-            dependencies: [],
+            dependencies: [
+				// global
+				.product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+			],
 			resources: [.process("Resources")]
 		),
         .testTarget(
