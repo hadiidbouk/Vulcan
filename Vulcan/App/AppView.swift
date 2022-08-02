@@ -20,7 +20,7 @@ private enum Layout {
 struct AppView: View {
 	let store: Store<AppState, AppAction>
 
-    var body: some View {
+	var body: some View {
 		VStack {
 			HStack {
 				MediaLibraryView()
@@ -30,11 +30,11 @@ struct AppView: View {
 		}
 		.frame(minWidth: Layout.windowDefaultWidth, minHeight: Layout.windowDefaultHeight)
 		.background(Color.Vulcan.background)
-    }
+	}
 }
 
 struct AppView_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		AppView(
 			store: .init(
 				initialState: .init(),

@@ -13,13 +13,13 @@ public struct TimelineToolsState: Equatable {
 
 	let scaleStep: TimeInterval = 1
 	let scaleAcceptedValues: [TimeInterval] = [
-		0.04, 0.1, 0.25,  0.5, 0.75,
+		0.04, 0.1, 0.25, 0.5, 0.75,
 		1, 2, 3, 4, 5, 7, 10, 15,
 		20, 30, 60, 90, 120, 180,
 		240, 300, 420, 600, 900,
-		1200, 1800, 3600
+		1200, 1800, 3600,
 	]
-	
+
 	var unitTime: TimeInterval = .zero
 	var movieEndDuration: TimeInterval = .zero
 	var axisWidth: CGFloat = Windows.main.frame.width

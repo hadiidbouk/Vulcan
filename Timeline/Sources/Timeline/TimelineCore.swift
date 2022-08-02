@@ -9,9 +9,9 @@ import ComposableArchitecture
 import Shared
 
 public struct TimelineState: Equatable {
-    @BindableState var timelineRect: CGRect = .zero
-    
-    var rows: IdentifiedArrayOf<TimelineRowState> = []
+	@BindableState var timelineRect: CGRect = .zero
+
+	var rows: IdentifiedArrayOf<TimelineRowState> = []
 	var defaultRowsCount = 5
 	var timelineTools = TimelineToolsState()
 	var movieEndDuration: TimeInterval = .zero
@@ -36,7 +36,7 @@ public struct TimelineEnvironment {
 	let mainQueue: AnySchedulerOf<DispatchQueue>
 	let fileManager: FileManager
 
-    public init(
+	public init(
 		mainQueue: AnySchedulerOf<DispatchQueue>,
 		fileManager: FileManager
 	) {
@@ -61,16 +61,16 @@ public let timelineReducer = Reducer.combine(
 						fileManager: environment.fileManager
 					)
 				)
-				
+
 				effects.append(effect.map { TimelineAction.row(id: id, action: $0) })
 			}
-			
+
 			return Effect.merge(effects)
-				
+
 		case let .row(id, action: .movieEndDurationChanged):
 			let rowState = state.rows[id]
 			state.movieEndDuration = max(state.movieEndDuration, rowState.movieEndDuration)
-			
+
 			var timelineToolsState = state.timelineTools
 			let effect = timelineToolsReducer.run(
 				&timelineToolsState,
@@ -78,7 +78,7 @@ public let timelineReducer = Reducer.combine(
 				.init()
 			)
 				.map(TimelineAction.timelineTools)
-			
+
 			state.timelineTools = timelineToolsState
 			return Effect.merge(
 				effect,
@@ -93,9 +93,11 @@ public let timelineReducer = Reducer.combine(
 	timelineRowReducer.forEach(
 		state: \.rows,
 		action: /TimelineAction.row(id:action:),
-		environment: { .init(
-			mainQueue: $0.mainQueue,
-			fileManager: $0.fileManager)
+		environment: {
+			.init(
+				mainQueue: $0.mainQueue,
+				fileManager: $0.fileManager
+			)
 		}
 	),
 	timelineToolsReducer.pullback(

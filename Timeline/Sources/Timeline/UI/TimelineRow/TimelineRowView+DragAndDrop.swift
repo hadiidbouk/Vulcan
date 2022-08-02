@@ -27,20 +27,20 @@ extension TimelineRowView {
 	}
 	struct Delegate: DropDelegate {
 		let viewStore: ViewStore<TimelineRowState, TimelineRowAction>
-		
+
 		func dropExited(info: DropInfo) {
 			viewStore.send(.dragPositionChanged(position: nil))
 		}
-		
+
 		func dropEntered(info: DropInfo) {
 			viewStore.send(.dragPositionChanged(position: info.location))
 		}
-		
+
 		func dropUpdated(info: DropInfo) -> DropProposal? {
 			viewStore.send(.dragPositionChanged(position: info.location))
 			return nil
 		}
-		
+
 		func performDrop(info: DropInfo) -> Bool {
 			let items = info.itemProviders(for: viewStore.fileypes)
 			viewStore.send(.onDrop(items: items, position: info.location))

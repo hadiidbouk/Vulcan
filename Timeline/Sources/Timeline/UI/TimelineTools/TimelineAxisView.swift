@@ -17,7 +17,7 @@ private enum Layout {
 
 struct TimelineAxisView: View {
 	let store: Store<TimelineToolsState, TimelineToolsAction>
-	
+
 	var body: some View {
 		WithViewStore(store) { viewStore in
 			VStack(alignment: .leading) {
@@ -31,7 +31,7 @@ struct TimelineAxisView: View {
 									.fontWeight(.light)
 									.foregroundColor(Color.Vulcan.white)
 								AxisShape(isLastAxis: index == count - 1)
-									.stroke(Color.Vulcan.white , lineWidth: Layout.strokeLineWidth)
+									.stroke(Color.Vulcan.white, lineWidth: Layout.strokeLineWidth)
 									.frame(width: TimelineConstants.axisUnitWidth)
 							}
 						}
@@ -46,17 +46,17 @@ struct TimelineAxisView: View {
 
 private struct AxisShape: Shape {
 	let isLastAxis: Bool
-	
+
 	func path(in rect: CGRect) -> Path {
 		let startYOffset = rect.height / 4
 		var path = Path()
 		path.move(to: CGPoint(x: rect.minX, y: rect.minY + startYOffset))
 		path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
-		
+
 		path.move(to: CGPoint(x: rect.minX + rect.width / 6, y: rect.maxY))
 		for x in stride(from: rect.minX + rect.width / 6, to: rect.maxX, by: rect.width / 6) {
 			path.move(to: CGPoint(x: x, y: rect.maxY))
-			
+
 			let y = x == rect.midX ? rect.midY : rect.midY + startYOffset
 			path.addLine(to: CGPoint(x: x, y: y))
 		}
@@ -64,7 +64,7 @@ private struct AxisShape: Shape {
 			path.move(to: CGPoint(x: rect.maxX, y: rect.maxY))
 			path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY + startYOffset))
 		}
-		
+
 		return path
 	}
 }

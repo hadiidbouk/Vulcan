@@ -5,10 +5,10 @@
 //  Created by Hadi Dbouk on 31/07/2022.
 //
 
+import AVFoundation
 import Combine
 import ComposableArchitecture
 import UniformTypeIdentifiers
-import AVFoundation
 
 public extension FileManager {
 	func extractMetadata(from itemProvider: NSItemProvider) -> Effect<FileMetadata, AppError> {
@@ -17,8 +17,8 @@ public extension FileManager {
 				promise(.failure(.unkownFileType))
 				return
 			}
-			
-			itemProvider.loadItem(forTypeIdentifier: identifier, options: nil) { (urlData, error) in
+
+			itemProvider.loadItem(forTypeIdentifier: identifier, options: nil) { urlData, _ in
 				guard
 					let urlData = urlData as? Data,
 					let url = URL(dataRepresentation: urlData, relativeTo: nil)
@@ -30,15 +30,15 @@ public extension FileManager {
 					promise(.failure(.cannotExtractUTType))
 					return
 				}
-				
+
 				let asset = AVAsset(url: url)
-				
-				let metadata = FileMetadata (
+
+				let metadata = FileMetadata(
 					url: url,
 					type: type,
 					duration: asset.duration.seconds
 				)
-				
+
 				promise(.success(metadata))
 			}
 		}
