@@ -29,11 +29,13 @@ public enum TimelineRowAction {
 	case axisScaleDidChange(unitTime: TimeInterval)
 	case mediaPositionsChanged
 	case movieEndDurationChanged
+	case didGenerateRowItem(_ item: TimelineRowItem)
 }
 
 struct TimelineRowEnvironment {
 	let mainQueue: AnySchedulerOf<DispatchQueue>
 	let fileManager: FileManager
+	let mediaDisplayManager: MediaDisplayManager
 }
 
 let timelineRowReducer = Reducer<TimelineRowState, TimelineRowAction, TimelineRowEnvironment> { state, action, environment in
@@ -48,14 +50,22 @@ let timelineRowReducer = Reducer<TimelineRowState, TimelineRowAction, TimelineRo
 			.catchToEffect()
 			.map(TimelineRowAction.didExtractUTType)
 	case let .didExtractUTType(.success(fileMetadata)):
-		if let dropPosition = state.dropPosition {
+		guard let dropPosition = state.dropPosition else {
+			return Effect(value: TimelineRowAction.mediaPositionsChanged)
+		}
+		let axisUnitTime = state.axisUnitTime
+		return Effect.task {
+			let frames = try await environment.mediaDisplayManager.extractVideoFrames(from: fileMetadata.url)
 			let item = TimelineRowItem(
 				position: dropPosition,
 				fileMetadata: fileMetadata,
-				axisUnitTime: state.axisUnitTime
+				axisUnitTime: axisUnitTime,
+				frames: frames
 			)
-			state.items.append(item)
+			return TimelineRowAction.didGenerateRowItem(item)
 		}
+	case .didGenerateRowItem(let item):
+		state.items.append(item)
 		return Effect(value: TimelineRowAction.mediaPositionsChanged)
 	case let .didExtractUTType(.failure(error)):
 		print(error)
