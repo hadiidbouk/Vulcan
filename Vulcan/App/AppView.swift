@@ -42,7 +42,8 @@ struct AppView_Previews: PreviewProvider {
 				environment: .init(
 					timelineEnvironment: .init(
 						mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
-						fileManager: .default
+						fileManager: .default,
+						mediaDisplayManager: .init()
 					)
 				)
 			)

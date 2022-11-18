@@ -23,9 +23,18 @@ struct TimelineRowView: View {
 				}
 
 				ForEach(viewStore.items) { item in
-					Color.yellow
+					if let frames = item.frames[viewStore.axisUnitTime] {
+						LazyHStack(spacing: .zero) {
+							ForEach(frames) { frame in
+								frame.image
+									.resizable()
+									.frame(width: TimelineConstants.axisUnitWidth, height: height)
+							}
+						}
+						.frame(width: item.width)
+						.clipped()
 						.offset(x: item.position.x)
-						.frame(width: item.width, height: height)
+					}
 				}
 				Spacer()
 			}

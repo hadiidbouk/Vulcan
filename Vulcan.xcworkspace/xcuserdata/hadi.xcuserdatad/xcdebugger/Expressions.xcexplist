@@ -11,6 +11,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in closure #2 in MediaDisplayManager.extractFrames(from:for:):MediaDisplayManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "actualTime">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MediaDisplayManager.extractFrames(from:for:):MediaDisplayManager.swift">
+      </ContextState>
+      <ContextState
          contextName = "AxisShape.path(in:):TimelineAxisView.swift">
          <PersistentStrings>
             <PersistentString

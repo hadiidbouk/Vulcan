@@ -16,7 +16,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 		environment: .init(
 			timelineEnvironment: .init(
 				mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
-				fileManager: .default
+				fileManager: .default,
+				mediaDisplayManager: .init()
 			)
 		)
 	)

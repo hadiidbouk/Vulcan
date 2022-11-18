@@ -5,6 +5,7 @@
 //  Created by Hadi Dbouk on 11/07/2022.
 //
 
+import Foundation
 import ComposableArchitecture
 import Shared
 
@@ -35,13 +36,16 @@ public enum TimelineAction: BindableAction {
 public struct TimelineEnvironment {
 	let mainQueue: AnySchedulerOf<DispatchQueue>
 	let fileManager: FileManager
+	let mediaDisplayManager: MediaDisplayManager
 
 	public init(
 		mainQueue: AnySchedulerOf<DispatchQueue>,
-		fileManager: FileManager
+		fileManager: FileManager,
+		mediaDisplayManager: MediaDisplayManager
 	) {
 		self.mainQueue = mainQueue
 		self.fileManager = fileManager
+		self.mediaDisplayManager = mediaDisplayManager
 	}
 }
 
@@ -58,7 +62,8 @@ public let timelineReducer = Reducer.combine(
 					.axisScaleDidChange(unitTime: unitTime),
 					.init(
 						mainQueue: environment.mainQueue,
-						fileManager: environment.fileManager
+						fileManager: environment.fileManager,
+						mediaDisplayManager: environment.mediaDisplayManager
 					)
 				)
 
@@ -96,7 +101,8 @@ public let timelineReducer = Reducer.combine(
 		environment: {
 			.init(
 				mainQueue: $0.mainQueue,
-				fileManager: $0.fileManager
+				fileManager: $0.fileManager,
+				mediaDisplayManager: $0.mediaDisplayManager
 			)
 		}
 	),
